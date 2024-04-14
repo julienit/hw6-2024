@@ -9,6 +9,8 @@ window.addEventListener("load", function() {
 });
 
 // Play Video
+var video = document.querySelector("#player1");
+
 document.querySelector("#play").addEventListener("click", function() {
     console.log("Play Video");
     video.play();
@@ -16,6 +18,7 @@ document.querySelector("#play").addEventListener("click", function() {
 });
 
 // Pause Video
+var video = document.querySelector("#player1");
 document.querySelector("#pause").addEventListener("click", function() {
 	console.log("Pause Video");
 	video.pause();
@@ -23,20 +26,20 @@ document.querySelector("#pause").addEventListener("click", function() {
 
 // Slow the current video speed by 10% each time the button is clicked and log the new speed to the console
 document.querySelector("#slower").addEventListener("click", function() {
-    video.playbackRate -= 0.2;
+    video.playbackRate -= 0.1;
 	console.log("Speed is " + video.playbackRate);
 });
 
 // Increase the current video speed by 10% each time the button is clicked and log the new speed to the console
 document.querySelector("#faster").addEventListener("click", function() {
-	video.playbackRate += 0.2;
+	video.playbackRate += 0.1;
 	console.log("Speed is " + video.playbackRate);
 });
 
 // Skip ahead 10 seconds in the video each time the button is clicked
 document.querySelector("#skip").addEventListener("click", function() {
-	if (video.currentTime < video.duration - 15) {
-		video.currentTime += 15;
+	if (video.currentTime < video.duration - 10) {
+		video.currentTime += 10;
 	} else {
 		video.currentTime = 0;
 		video.play();
