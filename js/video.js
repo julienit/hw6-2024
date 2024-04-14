@@ -38,10 +38,10 @@ document.querySelector("#faster").addEventListener("click", function() {
 
 // Skip ahead 10 seconds in the video each time the button is clicked
 document.querySelector("#skip").addEventListener("click", function() {
-	if (video.currentTime < video.duration - 10) {
-		video.currentTime += 10;
-	} else {
+	if (video.currentTime + 10 > video.duration) {
 		video.currentTime = 0;
+	} else {
+		video.currentTime += 10;
 		video.play();
 	}
 	console.log("Current location: " + video.currentTime);
